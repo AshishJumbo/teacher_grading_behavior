@@ -102,7 +102,7 @@ Experimental design pseudocode:
             <th>Random Sample</th>
             <th>Iteration Batch Size</th>
             <th></th>
-            <th>Holdout subsample</th>
+            <th style="background-color: #f006">Holdout subsample</th>
         </tr>
     </thead>
     <tbody>
@@ -115,7 +115,7 @@ Experimental design pseudocode:
             <td>(20)</td>
             <td>80</td>
             <td></td>
-            <td>5-SS(15)</td>
+            <td style="background-color: #f006">5-SS(15)</td>
         </tr>
         <tr>
             <td>2</td>
@@ -126,7 +126,7 @@ Experimental design pseudocode:
             <td>(20)</td>
             <td>80</td>
             <td></td>
-            <td>1-SS(15)</td>
+            <td style="background-color: #f006">1-SS(15)</td>
         </tr>
         <tr>
             <td>3</td>
@@ -137,7 +137,7 @@ Experimental design pseudocode:
             <td>(20)</td>
             <td>80</td>
             <td></td>
-            <td>2-SS(15)</td>
+            <td style="background-color: #f006">2-SS(15)</td>
         </tr>
         <tr>
             <td>4</td>
@@ -148,7 +148,7 @@ Experimental design pseudocode:
             <td>(20)</td>
             <td>80</td>
             <td></td>
-            <td>3-SS(15)</td>
+            <td style="background-color: #f006">3-SS(15)</td>
         </tr>
         <tr>
             <td>5</td>
@@ -159,7 +159,7 @@ Experimental design pseudocode:
             <td>(20)</td>
             <td>80</td>
             <td></td>
-            <td>4-SS(15)</td>
+            <td style="background-color: #f006">4-SS(15)</td>
         </tr>
     </tbody>
 </table>
