@@ -81,23 +81,27 @@ for user_xid in user_xids:
         last_10_assign_scores = [i for i in range(10)]
         active_index = 0
         for i in range(1, 11):
-            temp_df.fillna({'is_skb_'+str(i): False, 'score_percentage_'+str(i): 0}, inplace=True)
-            print(temp_df['is_skb_'+str(i)])
-            if ~(temp_df['is_skb_'+str(i)].unique()[0]):
-                last_10_assign_scores[active_index] = temp_df['score_percentage_'+str(i)].unique()[0]
+            temp_df.fillna({'is_skb_' + str(i): False, 'score_percentage_' + str(i): 0}, inplace=True)
+            print(temp_df['is_skb_' + str(i)])
+            if ~(temp_df['is_skb_' + str(i)].unique()[0]):
+                last_10_assign_scores[active_index] = temp_df['score_percentage_' + str(i)].unique()[0]
                 active_index += 1
 
         for j in range(1, 6):
             df_filtered_fairness_graded_or.loc[(df_filtered_fairness_graded_or.user_xid == user_xid) &
                                                (df_filtered_fairness_graded_or.assignment_log_id == assignment_log_id),
-                                               'prior_assignment_score_percentage_'+str(j)] = last_10_assign_scores[j-1]
+                                               'prior_assignment_score_percentage_' + str(j)] = last_10_assign_scores[
+                j - 1]
 
-
+df_filtered_fairness_graded_or = df_filtered_fairness_graded_or[
+    ['grade_feedback_id', 'problem_log_id', 'teacher_xid', 'grade', 'feedback', 'active_batch', 'time_taken_seconds',
+     'created_at', 'fairness_assigned_pr_logs_id', 'batch_number', 'student_idx',  # 'username',
+     'curricula', 'category',
+     'exp_batch_number', 'experiment_condition', 'learner_ethnic_names', 'learner_ethnicity', 'learner_gender',
+     'assignment_log_id', 'problem_id', 'start_time', 'end_time', 'score', 'answer_text', 'first_action_type_id',
+     'attempt_count', 'first_response_time', 'teacher_comment', 'user_xid', 'assignment_xid', 'assignment_id',
+     'owner_xid', 'name', 'problem_type_id', 'assistment_id', 'position', 'prior_assignment_score_percentage_1',
+     'prior_assignment_score_percentage_2', 'prior_assignment_score_percentage_3',
+     'prior_assignment_score_percentage_4', 'prior_assignment_score_percentage_5']]
 df_filtered_fairness_graded_or.to_csv('../data/processed2/filtered_fairness_graded_openresponse_final.csv',
                                       index=False)
-
-
-
-
-
-
